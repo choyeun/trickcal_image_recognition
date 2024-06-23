@@ -2,8 +2,6 @@ import os
 import subprocess
 import pytesseract as ts
 from PIL import Image
-
-import self
 from ppadb.client import Client as AdbClient
 
 deviceport = 53218
@@ -31,13 +29,13 @@ def create_env_var():
     new_value = existing_value + additional_value
     os.environ["Path"] = new_value
 
-
-def __init__(self):
+def initialize():
     create_env_var()
     return adb_connect()
 
 if __name__ == "__main__":
-    adbdevice = __init__(self)
+    create_env_var()
+    adbdevice = adb_connect()
     current_dir = os.path.dirname(__file__)
     x = 500
     y = 300
